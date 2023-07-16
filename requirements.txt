@@ -1,0 +1,3 @@
+faster_whisper
+python-telegram-bot
+pyyaml
