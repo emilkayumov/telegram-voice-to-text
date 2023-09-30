@@ -1,3 +1,2 @@
 bot_token: <TOKEN>
-allowlist_usernames:
-- emilkayumov
+model_size: large-v2

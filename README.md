@@ -18,23 +18,40 @@ I'm using now:
 
 ## How to run
 
+After creating a bot with [@BotFather](https://t.me/BotFather) fill `config.yaml` with token. Also you can use `allowlist_usernames` if you don't want anybody to use your bot.
+
+### With virtualenv
+
 You can create a virtual environment and setup it with:
 
 ```make init```
 
-After creating a bot with [@BotFather](https://t.me/BotFather) fill `config.yaml` with token. Also you can use `allowlist_usernames` if you don't want anybody to use your bot.
+And run it (it could be long first time because of downloading a model):
 
-And run it:
+```make run```
 
-`make run`
+### With Docker
+
+You can build an image:
+
+```make docker-build```
+
+And start it:
+
+```make docker-run```
+
+Or use daemon mode:
+
+```make docker-run-daemon```
 
 ## Plans
 
 1. ~~Init~~
-2. Run a bot on cloud
-3. A docker file to easily run on server
+2. ~~Run a bot on cloud~~
+3. ~~A docker file to easily run on server~~
 4. Setup monitorings to see if the bot is crashed
 5. Make the bot stable
-6. Setup logging (no user messages only using stats)
-7. Add some new functionality like summarizing messages
-8. ...
+6. Make test environment
+7. Setup logging (no user messages only using stats)
+8. Add some new functionality like summarizing messages
+9. ...

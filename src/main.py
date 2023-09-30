@@ -20,8 +20,11 @@ logging.basicConfig(
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
 CONFIG_PATH = "config.yaml"
-MODEL_SIZE = "large-v2"
-MODEL = WhisperModel(MODEL_SIZE, device="cpu", compute_type="int8")
+
+
+def load_model(model_size: str):
+    global MODEL
+    MODEL = WhisperModel(model_size, device="cpu", compute_type="int8")
 
 
 async def download_voice(
@@ -71,6 +74,8 @@ if __name__ == "__main__":
     allowlist_usernames = None
     if "allowlist_usernames" in config:
         allowlist_usernames = config["allowlist_usernames"]
+
+    load_model(config["model_size"])
 
     application = ApplicationBuilder().token(bot_token).build()
 
